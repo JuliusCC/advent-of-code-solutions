@@ -23,7 +23,7 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"deploy": "npm run build && gh-pages -d build",
-		"precommit": "lint-staged && deploy",
+		"precommit": "lint-staged && npm run deploy",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject"
 	},
