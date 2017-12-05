@@ -2,6 +2,10 @@
 	"name": "advent-of-code-solutions",
 	"version": "0.1.0",
 	"homepage": "https://JuliusCC.github.io/advent-of-code-solutions",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JuliusCC/advent-of-code-solutions"
+	},
 	"private": false,
 	"dependencies": {
 		"react": "^16.2.0",
@@ -11,11 +15,20 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"deploy": "npm run build&&gh-pages -d build",
+		"deploy": "npm run build && gh-pages -d build",
+		"precommit": "lint-staged && deploy",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject"
 	},
 	"devDependencies": {
+		"husky": "^0.14.3",
+		"lint-staged": "^4.3.0",
 		"gh-pages": "^1.1.0"
+	},
+	"lint-staged": {
+		"src/**/*.{js,jsx,json,css}": [
+			"prettier --single-quote --no-semi --write",
+			"git add"
+		]
 	}
 }
