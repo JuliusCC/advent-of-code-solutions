@@ -3,6 +3,7 @@ import { API_URL } from '../utils/constants'
 import DaySelector from '../components/DaySelector'
 import PartPicker from '../components/PartPicker'
 import TextInput from '../components/TextInput'
+import Submit from '../components/Submit'
 import styled from 'styled-components'
 
 const Grid = styled.div`
@@ -46,6 +47,10 @@ class SolutionForm extends Component {
 		console.log({ part })
 	}
 
+	submitForm = e => {
+		console.log(e)
+	}
+
 	render() {
 		return (
 			<Grid>
@@ -58,6 +63,7 @@ class SolutionForm extends Component {
 					propagateChange={this.updateSolution}
 				/>
 				<TextInput />
+				<Submit onClick={this.submitForm} />
 			</Grid>
 		)
 	}
