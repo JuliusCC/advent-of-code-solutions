@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { API_URL } from '../utils/constants'
 import DaySelector from '../components/DaySelector'
 import PartPicker from '../components/PartPicker'
+import TextInput from '../components/TextInput'
 import styled from 'styled-components'
 
 const Grid = styled.div`
@@ -56,6 +57,7 @@ class SolutionForm extends Component {
 					availableParts={this.state.availableParts}
 					propagateChange={this.updateSolution}
 				/>
+				<TextInput />
 			</Grid>
 		)
 	}
